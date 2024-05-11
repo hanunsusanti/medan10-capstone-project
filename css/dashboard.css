@@ -13,14 +13,14 @@ nav{
     top: 0;
     left: 0;
     height: 100%;
-    padding: 48px 23px 10px ;
+    padding: 48px 20px 10px ;
     background-color: #109BFF;
 }
 
 .navbar{
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 90px;
 }
 
 .acc-icon-container{
@@ -37,14 +37,14 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 58px;
+    gap: 50px;
     list-style-type: none;
 }
 
 .dashboard-icon,
 .addData-icon,
 .feedback-icon{
-    width: 45px;
+    width: 46px;
     transition: transform 0.3s ease;
 }
 
@@ -54,28 +54,11 @@ ul {
     transform: scale(1.3);
 }
 
-/* .hover-menu{
-    position: absolute;
-    display: none;
-    padding: 8px 12px;
-    font-weight: 300;
-    font-size: 12px;
-    z-index: 1;
-    top: calc(100% + 8px);
-    left: 50%;
-    color: rgba(255, 255, 255, 0.945);
-    transition: translateX(-50%);
-}
-
-a:hover ~.hover-menu {
-    display: block;
-} */
-
 .logOut-menu{
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding-top: 70px;
+    gap: 10px;
+    padding-top: 100px;
     font-weight: 400;
     font-size: 14px;
     color: white;
@@ -224,7 +207,7 @@ main {
 }
 
 .totalprop {
-    grid column: span 2;
+    grid-column: span 2;
 }
 
 /* ----------  Chart Detail ---------- */
