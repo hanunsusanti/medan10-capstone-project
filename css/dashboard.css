@@ -1,0 +1,188 @@
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --------- Navbar --------- */
+
+nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 48px 23px 10px ;
+    background-color: #109BFF;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.acc-icon-container{
+    display: flex;
+    justify-content: center;
+}
+
+.account-icon{
+    width: 60px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 58px;
+    list-style-type: none;
+}
+
+.dashboard-icon,
+.addData-icon,
+.feedback-icon{
+    width: 45px;
+    transition: transform 0.3s ease;
+}
+
+.dashboard-icon:hover,
+.addData-icon:hover,
+.feedback-icon:hover{
+    transform: scale(1.3);
+}
+
+/* .hover-menu{
+    position: absolute;
+    display: none;
+    padding: 8px 12px;
+    font-weight: 300;
+    font-size: 12px;
+    z-index: 1;
+    top: calc(100% + 8px);
+    left: 50%;
+    color: rgba(255, 255, 255, 0.945);
+    transition: translateX(-50%);
+}
+
+a:hover ~.hover-menu {
+    display: block;
+} */
+
+.logOut-menu{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 70px;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}
+
+.logOut-icon{
+    width: 23px;
+}
+
+/* --------- Header and Filter button --------- */
+
+header{
+    margin-left: 135px;
+    padding: 32px 40px;
+    display:flex;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    padding-right: 60%;
+    color: #4B93FF;
+}
+
+.logo span{
+    color: #FFE713;
+}
+
+.filter-button{
+    display: flex;
+    align-items: center;
+}
+
+.borough-filter{
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn-borough{
+    padding: 8px 25px;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.borough-dropdwn-content{
+    display: none;
+    position: absolute;
+    font-weight: 400;
+    font-size: 12px;
+    background-color: #f1f1f1;
+    width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.month-dropdwn-content{
+    display: none;
+    position: absolute;
+    font-weight: 400;
+    font-size: 12px;
+    background-color: #f1f1f1;
+    width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.borough-dropdwn-content a,
+.month-dropdwn-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.borough-dropdwn-content a:hover,
+.month-dropdwn-content a:hover {
+    background-color: #ddd;
+}
+
+.borough-filter:hover .borough-dropdwn-content,
+.month-filter:hover .month-dropdwn-content{
+    display: block;
+}
+
+.borough-filter:hover .dropbtn-borough,
+.month-filter:hover .dropbtn-month {
+    background-color: #9cc3ff;
+}
+
+.line div{
+    padding: 17px 1px;
+    background-color: #969696;
+}
+
+.month-filter{
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn-month{
+    padding: 8px 25px;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+}
