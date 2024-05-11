@@ -186,3 +186,144 @@ header{
     border: none;
     border-radius: 0px 10px 10px 0px;
 }
+
+/* --------------------- Main Content ------------------------ */
+
+main {
+    margin-left: 180px;
+    margin-right: 45px;
+    margin-bottom: 30px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 13px;
+    column-gap: 50px;
+}
+
+.titles {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #109BFF;
+    padding-bottom: 3px;
+}
+
+.tabel {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.linetotal {
+    grid-column: span 4;
+}
+
+.totalavg {
+    grid-column: span 2;
+}
+
+.totalprop {
+    grid column: span 2;
+}
+
+/* ----------  Chart Detail ---------- */
+
+.scorecode1, .scorecode2 {
+    padding: 0px 30px;
+}
+
+.scoretotal, .scoreprop {
+    padding: 10px;
+    height: 40px;
+    background-color: #cdcdcd;
+}
+
+.tabelrec {
+    padding: 10px;
+    height: 200px;
+    background-color: #cdcdcd;
+}
+
+.piechart1, .piechart2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pieavg, .pietotal {
+    padding: 10px;
+    width: 110px;
+    height: 110px;
+    background-color: #cdcdcd;
+    border-radius: 50%;
+}
+
+.linechartotal {
+    padding: 10px;
+    height: 100px;
+    background-color: #cdcdcd;
+}
+
+.totalavgchart {
+    padding: 10px;
+    height: 120px;
+    background-color: #cdcdcd;
+}
+
+.linechartprop {
+    padding: 10px;
+    height: 120px;
+    background-color: #cdcdcd;
+}
+
+/* ----- Form Search ----- */
+form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-input {
+    width: 100%;
+}
+
+form input[type="text"] {
+    width: 100%;
+    font-size: 10px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+/* ----- Form Button ----- */
+
+.button{
+    padding-bottom: 12px;
+    padding-top: 12px;
+    gap: 10px;
+    justify-content: center;
+}
+
+form input[type="submit"] {
+    background-color: #008DDC;
+    color: white;
+    padding: 5px 30px;
+    font-size: 10px;
+    border : 2px solid #496ADE;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover{
+    background-color: #026097;
+}
+
+/* -------------- Footer --------------- */
+.footertitle {
+    text-align: center;
+    font-size: 12px;
+    color: black;
+}
