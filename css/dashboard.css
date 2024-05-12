@@ -391,3 +391,102 @@ form input[type="text"] {
         border-radius: 20px; 
     }
 }
+
+/*-------- mobile tablet ------*/
+@media (min-width: 768px) and (max-width: 1199px) {
+    /* --------- Navbar --------- */
+    nav {
+        width: 80px; 
+        padding: 70px 10px; 
+
+    }
+
+    .account-icon{
+        width: 45px;
+    }
+
+    .dashboard-icon, .addData-icon, .feedback-icon{
+    width: 40px;  
+    }
+
+    .logOut-icon{
+        width: 20px;
+    }
+
+    /* --------- Header and Filter button --------- */
+    header {
+        padding: 10px 15px; 
+        gap: 30px; 
+        margin-left: 100px;
+        margin-top: 20px;
+    }
+
+    .logo {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .filter-button {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .dropbtn-borough{
+        padding: 5px 15px;
+    }
+
+    .dropbtn-month{
+        padding: 5px 15px;
+    }
+
+    .borough-filter, .month-filter {
+        margin-bottom: 5px;
+        
+    }
+
+    /* --------------------- Main Content ------------------------ */
+    .titles {
+        font-size: 15px;
+    }
+
+    main {
+        margin-left: 70px;
+        padding: 0 15px; 
+    }
+
+    .grid-container {
+        grid-template-columns: auto; 
+    }
+
+    .tabel, .linetotal, .totalavg, .totalprop {
+        grid-column: auto; 
+    }
+
+    /* ----------  Chart Detail ---------- */
+    .scorecode1, .scorecode2 {
+        margin-top: 20px;
+        padding: 10px 20px;
+    }
+
+    .scoreprop {
+        margin-left: 5px;
+    }
+    
+    .tabelrec, .piechart1, .piechart2, .linechartotal, .totalavgchart, .linechartprop {
+        margin: 10px 5px; 
+    }
+
+    form {
+        padding: 0; 
+    }
+
+    .form-input {
+        width: 100%;
+    }
+
+    form input[type="text"] {
+        font-size: 12px; 
+        padding: 10px; 
+        border-radius: 20px; 
+    }
+}
