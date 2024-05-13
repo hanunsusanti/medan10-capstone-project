@@ -9,7 +9,7 @@
 /* --------- Navbar --------- */
 
 nav{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -71,12 +71,12 @@ ul {
 /* --------- Header and Filter button --------- */
 
 header{
-    padding: 32px 46px 32px 170px;
+    padding: 32px 0px 32px 170px;
     display:flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    gap: 675px;
+    gap: 678px;
 }
 
 .logo {
@@ -94,25 +94,37 @@ header{
     align-items: center;
 }
 
-.borough-filter{
+.borough-filter,
+.month-filter{
     position: relative;
     display: inline-block;
 }
 
 .dropbtn-borough{
-    padding: 8px 25px;
+    padding: 6px 18px;
     font-weight: 500;
     font-size: 12px;
+    color: #5c5c5c;
     background-color: #D9D9D9;
     border: none;
     border-radius: 10px 0px 0px 10px;
+}
+
+.dropbtn-month{
+    padding: 6px 22px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #5c5c5c;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .borough-dropdwn-content{
     display: none;
     position: absolute;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 11px;
     background-color: #f1f1f1;
     width: 130px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -123,7 +135,7 @@ header{
     display: none;
     position: absolute;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 11px;
     background-color: #f1f1f1;
     width: 60px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -154,29 +166,15 @@ header{
 }
 
 .line div{
-    padding: 17px 1px;
-    background-color: #969696;
-}
-
-.month-filter{
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn-month{
-    padding: 8px 25px;
-    font-weight: 500;
-    font-size: 12px;
-    background-color: #D9D9D9;
-    border: none;
-    border-radius: 0px 10px 10px 0px;
+    padding: 15px 1px;
+    background-color: #bdbdbd;
 }
 
 /* --------------------- Main Content ------------------------ */
 
 main {
-    margin-left: 180px;
-    padding-right: 45px;
+    /* margin-left: 180px; */
+    padding: 0px 45px 0px 170px;
 }
 
 .grid-container {
@@ -268,7 +266,7 @@ main {
     background-color: #cdcdcd;
 }
 
-/* ----- Form Search ----- */
+/* ----- Search Bar for  ----- */
 form {
     padding-left: 10px;
     padding-right: 10px;

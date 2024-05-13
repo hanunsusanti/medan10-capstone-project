@@ -9,13 +9,12 @@
 /* --------- Navbar --------- */
 
 nav{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     padding: 48px 20px 10px ;
     background-color: #109BFF;
-    position: fixed;
 }
 
 .navbar{
