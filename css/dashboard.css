@@ -1,4 +1,3 @@
-/* -------- HANUN ---------------------------------- */
 *{
     text-decoration: none;
     margin: 0px;
@@ -13,7 +12,7 @@ nav{
     top: 0;
     left: 0;
     height: 100%;
-    padding: 48px 20px 10px ;
+    padding: 48px 13px 10px ;
     background-color: #109BFF;
 }
 
@@ -32,7 +31,6 @@ nav{
     width: 60px;
 }
 
-/* -------- SOLAHUDIN ---------------------------------- */
 ul {
     display: flex;
     flex-direction: column;
@@ -45,22 +43,22 @@ ul {
 .dashboard-icon,
 .addData-icon,
 .feedback-icon{
-    width: 46px;
+    width: 40px;
     transition: transform 0.3s ease;
 }
 
 .logOut-menu{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     padding-top: 100px;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
     color: white;
 }
 
 .logOut-icon{
-    width: 23px;
+    width: 20px;
 }
 
 .dashboard-icon:hover,
@@ -69,16 +67,14 @@ ul {
     transform: scale(1.3);
 }
 
-/* -------- LELI ---------------------------------- */
 /* --------- Header and Filter button --------- */
-
 header{
-    padding: 32px 0px 32px 170px;
+    padding: 30px 0px 38px 150px;
     display:flex;
     flex-direction: row;
     justify-content: left;
     align-items: center;
-    gap: 678px;
+    gap: 650px;
 }
 
 .logo {
@@ -94,38 +90,37 @@ header{
 .filter-button{
     display: flex;
     align-items: center;
+    gap: 24px ;
 }
 
 .borough-filter,
 .month-filter{
-    position: relative;
     display: inline-block;
 }
 
-/* -------- SOLAHUDIN ---------------------------------- */
 .dropbtn-borough{
     padding: 6px 18px;
     font-weight: 500;
     font-size: 12px;
-    color: #5c5c5c;
-    background-color: #D9D9D9;
+    color: #6b6b6b;
+    background-color: #e0e0e0;
     border: none;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 5px;
+}
+
+.dropbtn-borough img,
+.dropbtn-month img{
+    margin-left: 5px;
 }
 
 .dropbtn-month{
     padding: 6px 22px;
     font-weight: 500;
     font-size: 12px;
-    color: #5c5c5c;
-    background-color: #D9D9D9;
+    color: #6b6b6b;
+    background-color: #e0e0e0;
     border: none;
-    border-radius: 0px 10px 10px 0px;
-}
-
-.line div{
-    padding: 15px 1px;
-    background-color: #bdbdbd;
+    border-radius: 5px;
 }
 
 .borough-dropdwn-content{
@@ -157,8 +152,6 @@ header{
     text-decoration: none;
     display: block;
 }
-
-/* -------- ANDREAN ---------------------------------- */
 .borough-dropdwn-content a:hover,
 .month-dropdwn-content a:hover {
     background-color: #ddd;
@@ -171,13 +164,12 @@ header{
 
 .borough-filter:hover .dropbtn-borough,
 .month-filter:hover .dropbtn-month {
-    background-color: #9cc3ff;
+    background-color: #9ac1f886;
 }
 
-/* -------- FITA ---------------------------------- */
 /* --------------------- Main Content ------------------------ */
 main {
-    padding: 0px 45px 0px 170px;
+    padding: 0px 45px 0px 150px;
 }
 
 .grid-container {
@@ -189,7 +181,7 @@ main {
 
 .titles {
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
     color: #109BFF;
     padding-bottom: 3px;
@@ -214,15 +206,10 @@ main {
 
 /* ----------  Chart Detail ---------- */
 
-.scorecode1 {
-    padding-right: 5px;
+.scorecode1,
+.scorecode2 {
     margin: auto;
 } 
-
-.scorecode2 {
-    padding-left: 5px;
-    margin: auto;
-}
 
 .scoretotal, .scoreprop {
     padding: 10px;
@@ -230,8 +217,6 @@ main {
     height: 40px;
     background-color: #cdcdcd;
 }
-
-/* -------- MEYTA ---------------------------------- */
 
 .tabelrec {
     padding: 10px;
@@ -259,7 +244,6 @@ main {
     background-color: #cdcdcd;
 }
 
-/* -------- SALFINA ---------------------------------- */
 .totalavgchart {
     padding: 10px;
     height: 120px;
@@ -298,107 +282,152 @@ form input[type="text"] {
     color: black;
 }
 
-/* -------- DHIYA ---------------------------------- */
 /*-------- mobile ------*/
 @media (max-width: 767px) {
     /* --------- Navbar --------- */
     nav {
-        width: 70px; 
-        padding: 70px 10px; 
+        width: 100%;
+        height: auto;
+        padding: 8px 15px;
+        position: fixed;
     }
+    
+    .navbar {
+        flex-direction: row;
+        gap: 85px;
+    }
+    
     .account-icon{
-        width: 35px;
+        width: 33px;
     }
+
+    ul {
+        flex-direction: row;
+        gap: 28px;
+    }
+    
     .dashboard-icon,
     .addData-icon,
     .feedback-icon{
-    width: 30px;  
+        padding-top: 5px;
+        width: 22px;
     }
+
+    .logOut-menu{
+        padding-top: 0px;
+        padding-left: 40px;
+        font-weight: 300;
+        font-size: 9px;
+        gap: 5px;
+    }
+
     .logOut-icon{
-        width: 20px;
+        width: 15px;
     }
+
     /* --------- Header and Filter button --------- */
     header {
-        padding: 10px 15px; 
-        gap: 10px; 
-        margin-left: 60px;
+        padding: 70px 0px 35px 20px; 
+        gap: 35px; 
     }
+
     .logo {
-        font-size: 11px;
-        margin-bottom: 10px;
+        font-size: 14px;
     }
 
     .filter-button {
-        flex-direction: row;
-        align-items: center;
+       gap: 10px;
     }
+
     .dropbtn-borough{
-        padding: 5px 15px;
+        padding: 5px 10px;
+        font-size: 9px;
     }
+
     .dropbtn-month{
         padding: 5px 15px;
+        font-size: 9px;
     }
-    .borough-filter,
-    .month-filter {
-        margin-bottom: 10px;
-        
+
+    .dropbtn-borough img,
+    .dropbtn-month img{
+        width: 9px;
+    }
+
+    .borough-dropdwn-content{
+        font-size: 9px;
+        width: 109px;
+    }
+    
+    .month-dropdwn-content{
+        font-size: 9px;
+        width: 48px;
+    }
+    
+    .borough-dropdwn-content a,
+    .month-dropdwn-content a{
+        padding: 8px 16px;
     }
 
     /* --------------------- Main Content ------------------------ */
-    .titles {
-        font-size: 12px;
-    }
     main {
-        margin-left: 70px;
-        padding: 0 15px; 
+        padding: 0px 20px; 
+    }
+
+    .titles {
+        font-size: 11px;
     }
 
     .grid-container {
         grid-template-columns: auto; 
+        row-gap: 30px;
+        column-gap: 20px;
     }
 
-    .tabel,
-    .linetotal,
+    .tabelrec{
+        grid-column: auto;
+    }
+
+    .linetotal {
+        grid-column: span 2;
+    }
+
     .totalavg,
     .totalprop {
-        grid-column: auto; 
+        grid-column: auto auto; 
     }
 
     /* ----------  Chart Detail ---------- */
-    .scorecode1,
-    .scorecode2 {
-        margin-top: 20px;
-        margin-left: 15px; 
-        padding: 10px 20px;
+    .scoretotal, .scoreprop {
+        width: 150px;
+        height: 48px;
     }
-
-    .scoreprop {
-        margin-left: 5px;
+    
+    .piechart1{
+        gap: 17px;
     }
-
-/* ---------- ANDREAN ---------------------------------- -- */
-    .tabelrec,
-    .piechart1,
-    .piechart2,
-    .linechartotal,
-    .totalavgchart,
-    .linechartprop {
-        width: 95%; 
-        margin: 10px 5px; 
+    
+    .pieavg, .pietotal {
+        width: 109px;
+        height: 109x;
     }
-
-    form {
-        padding: 0; 
-    }
-
-    .form-input {
+    
+    .linechartotal {
+        padding: 10px;
         width: 100%;
+        height: 100px;
     }
-
-    form input[type="text"] {
-        font-size: 12px; 
-        padding: 10px; 
-        border-radius: 20px; 
+    
+    .totalavgchart {
+        padding: 10px;
+        height: 120px;
+        background-color: #cdcdcd;
+    }
+    
+    .linechartprop {
+        padding: 10px;
+        height: 120px;
+        background-color: #cdcdcd;
     }
 }
 
@@ -436,7 +465,6 @@ form input[type="text"] {
         margin-bottom: 10px;
     }
 
-/* ---------- KRISNA ----------------------------------*/
     .filter-button {
         flex-direction: row;
         align-items: center;
