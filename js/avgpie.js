@@ -24,7 +24,8 @@ fetch('json/nycPropSales.json')
             datasets: [{
                 label: 'Avg Sale Price Per Borough',
                 data: arrAvgSales,
-                borderWidth: 1
+                borderWidth: 1,
+                hoverBorderWidth: 5
             }]
             },
             options: {
