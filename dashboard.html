@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <!-- -------- HANUN ---------------------------------- -->
@@ -87,7 +89,7 @@
             <div class="scorecode2">
                 <div class="titles">Total Building/Property</div>
                 <div class="scoreprop">
-                     <script src="js/bulding.js"></script> 
+                    <script src="js/bulding.js"></script> 
                 </div>
             </div>
 
@@ -107,7 +109,9 @@
 
             <div class="piechart1">
                 <div class="titles">Avg Sale Price Per Borough</div>
-                <div class="pieavg"></div>
+                <div class="pieavg">
+                    <canvas id="piechart-avg"></canvas>
+                </div>
             </div>
             <div class="piechart2">
                 <div class="titles">Total Property Sales Per Borough</div>
@@ -134,4 +138,6 @@
         <div class="footertitle">Copyrigt &copy; Section Medan Team 10 RevoU</div>
     </footer>
 </body>
+<script src="js/dashboard.js" type="text/javascript"></script>
+<script src="js/avgpie.js" type="text/javascript"></script>
 </html>
