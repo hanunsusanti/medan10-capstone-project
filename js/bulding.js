@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.log('Data loaded successfully:', data); // Debug
             jsonData = data;
             updateTotalProperty(data);
-            renderCharts(data);
+            return data;
         })
         .catch(error => console.error('Error loading JSON:', error));
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelectorAll('.borough-dropdwn-content a').forEach(button => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
-            const borough = event.target.getAttribute('data-borough');
+            const borough = event.target.getAttribute('data-id');
             console.log('Borough selected:', borough); // Debug
             updateTotalProperty(jsonData, borough);
         });
