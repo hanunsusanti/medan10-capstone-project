@@ -220,7 +220,7 @@ main {
 
 .tabelrec {
     padding: 10px;
-    height: 200px;
+    min-height: 200px;
     background-color: #cdcdcd;
 }
 
@@ -232,10 +232,7 @@ main {
 
 .pieavg, .pietotal {
     padding: 10px;
-    width: 110px;
-    height: 110px;
-    background-color: #cdcdcd;
-    border-radius: 50%;
+    min-width: 110px;
 }
 
 .linechartotal {
