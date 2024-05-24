@@ -432,29 +432,51 @@ form input[type="text"] {
 @media (min-width: 768px) and (max-width: 1199px) {
     /* --------- Navbar --------- */
     nav {
-        width: 80px; 
-        padding: 70px 10px; 
+        width: 100%;
+        height: auto;
+        padding: 8px 15px;
+        position: fixed;
+    }
 
+    .navbar {
+        flex-direction: row;
+        gap: 85px;
     }
 
     .account-icon{
-        width: 45px;
+        width: 40px;
+    }
+
+    ul {
+        flex-direction: row;
+        gap: 28px;
     }
 
     .dashboard-icon, .addData-icon, .feedback-icon{
-    width: 40px;  
+        padding-top: 5px;
+        justify-content: center;
+        margin-left: 40px;
+        width: 27px; 
     }
 
     .logOut-icon{
         width: 20px;
     }
 
+    .logOut-menu{
+        padding-top: 0px;
+        padding-left: 320px;
+        font-weight: 3000;
+        font-size: 13px;
+        gap: 5px;
+    }
+
     /* --------- Header and Filter button --------- */
     header {
-        padding: 10px 15px; 
+        padding: 70px 0px 35px 20px; 
         gap: 30px; 
         margin-left: 100px;
-        margin-top: 20px;
+        justify-content: center;
     }
 
     .logo {
@@ -469,14 +491,16 @@ form input[type="text"] {
 
     .dropbtn-borough{
         padding: 5px 15px;
+        font-size: 13px;
     }
 
     .dropbtn-month{
-        padding: 5px 15px;
+        padding: 5px 10px;
+        font-size: 13px;
     }
 
     .borough-filter, .month-filter {
-        margin-bottom: 5px;
+        margin-bottom: 15px;
         
     }
 
@@ -486,12 +510,13 @@ form input[type="text"] {
     }
 
     main {
-        margin-left: 70px;
+        margin-left: 20px;
         padding: 0 15px; 
     }
 
     .grid-container {
         grid-template-columns: auto; 
+        row-gap: 20px;
     }
 
     .tabel, .linetotal, .totalavg, .totalprop {
