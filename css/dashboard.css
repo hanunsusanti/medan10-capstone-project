@@ -225,14 +225,18 @@ main {
 }
 
 .piechart1, .piechart2 {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
 }
 
 .pieavg, .pietotal {
     padding: 10px;
-    min-width: 110px;
+}
+
+#piechart-avg, #pie-total-property-sales{
+    max-height: 255px;
+    max-width: 255px;
 }
 
 .linechartotal {
@@ -400,14 +404,14 @@ form input[type="text"] {
         height: 48px;
     }
     
-    .piechart1{
+    .piechart1, .piechart2{
         gap: 17px;
     }
     
-    .pieavg, .pietotal {
+    /* .pieavg, .pietotal { // HAPUS AJA INI YES
         width: 109px;
         height: 109x;
-    }
+    } */
     
     .linechartotal {
         padding: 10px;

@@ -29,11 +29,14 @@ fetch('json/nycPropSales.json')
             }]
             },
             options: {
-            scales: {
-                y: {
-                beginAtZero: true
+                plugins: {
+                    legend: {
+                    position: 'top',
+                    labels: {
+                        boxWidth: 12,
+                    }
+                    }
                 }
-            }
             }
         });
     }
