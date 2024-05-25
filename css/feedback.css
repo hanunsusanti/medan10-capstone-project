@@ -3,103 +3,129 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* --------- Navbar --------- */
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .body {
+        max-width: 70%;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 767px) {
+    header{
+        flex-direction: row;
+        height: auto;
+    }
+
+    main{
+        flex-direction: column;
+    }
+
+    div.nav-button{
+        flex-direction: column;
+    }
+    .body {
+        width : 90%;
+        height : auto;
+        padding: 40px 20px;
+    }
+    .avatar {
+        width : 80px;
+        height : 80px;
+        top : -10%
+    }
+}
+
+/* ----- Navigation Bar ----- */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0px;
+    width: 100%;
+    padding: 14px 3% 14px;
+    position: fixed;
+    background-color: #008bdc8c;
+    backdrop-filter: blur(70px);
+    font-family: "Poppins", sans-serif;
+}
+
+.logo1{
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.logo1 span{
+    color: #FFED4F;
+}
 
 nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    padding: 48px 20px 10px ;
-    background-color: #109BFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
 }
 
-.navbar{
+.nav-button{
     display: flex;
-    flex-direction: column;
-    gap: 90px;
+    gap: 30px;
 }
 
-.acc-icon-container{
-    display: flex;
-    justify-content: center;
+.nav-button a{
+    color: #ebebeb;
+    font-weight: 400;
+    transition: 0.3 ease;
+}
+
+.nav-button a:hover,
+.nav-button a:active{
+    color: #fff;
+    font-weight:600;
+    transform: scale(1.1);
 }
 
 .account-icon{
-    width: 60px;
+    width: 45px;
 }
 
-ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    list-style-type: none;
-}
-
-.dashboard-icon,
-.addData-icon,
-.feedback-icon{
-    width: 46px;
-    transition: transform 0.3s ease;
-}
-
-.dashboard-icon:hover,
-.addData-icon:hover,
-.feedback-icon:hover{
-    transform: scale(1.3);
-}
-
-.logOut-menu{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-top: 100px;
-    font-weight: 400;
-    font-size: 14px;
-    color: white;
-}
-
-.logOut-icon{
-    width: 23px;
-}
 
 /* ----- Main Content ----- */
 
 main{
     display: block;
-    margin-left: 135px;
-    padding: 50px 220px;
+    padding: 130px 265px;
+}
+
+body{
+    font-family: 'poppins', sans-serif;
 }
 
 .feedback-form{
-    padding: 60px 20px 60px 20px;
+    padding: 53px 80px 53px 80px;
     background-color: #E3E2F0;
     border-radius: 45px;
 }
 
 .feedback-form-header{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    gap: 25px;
-    padding-bottom: 18px;
+    gap: 15px;
+    padding-bottom: 50px;
     font-family: "Poppins", sans-serif;
 }
 
-.feedback-logo{
-    width: 88px;
-    height: 70px;
+.add-dataIcon{
+    width: 15%;
+    margin: auto;
 }
 
 .title{
     font-weight: 700;
-    font-size: 20px;
+    font-size: 23px;
     color: #282828;
 }
 
@@ -121,20 +147,26 @@ main{
             transform 20ms ease-in-out 0ms;
 }
 
-.form {
-    color: #222;
-    font-size: 25px;
+
+.feedback-form .form h2{
+text-align: center;
+color: #222;
+margin: 10px 0px 20px;
+font-size: 25px;
 }
 
-.form-element{
-    margin:25px 10%;
+.feedback-form .form .form-element{
+    margin:25px 5%;
+}
+
+.feedback-form .form .form-element label{
     font-size: 16px;
     color: #222;
 }
 
-input[type="text"],
-input[type="subject"]
-input[type="konten"]{
+.feedback-form .form .form-element input[type="text"],
+.feedback-form .form .form-element input[type="email"],
+.feedback-form .form .form-element input[type="konten"]{
     box-shadow: 2px 2px 2px  rgba(199, 199, 199, 0.8);
     margin-top: 10px;
     display:block;
@@ -151,14 +183,15 @@ input[type="konten"]{
     margin-top: 5px;
     display:block;
     width:100%;
+    padding: 10px;
     outline: none;
-    border-radius: 15px;
+    border-radius: 20px;
     resize: none;
 }
 
 textarea:is(:focus, :valid){
     border-width: 2px;
-    padding: 14px 14px 60px;
+    padding: 14px;
     border-color: #ffffff;
 }
 
@@ -166,14 +199,9 @@ textarea::-webkit-scrollbar{
     width: 0px;
 }
 
-.feedback-button{
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-}
 
-.feedback-button button {
-    width: 80%;
+.feedback-form .form .form-element button{
+    width: 100%;
     height: 40px;
     border:none;
     outline:none;

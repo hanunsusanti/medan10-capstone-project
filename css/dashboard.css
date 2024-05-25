@@ -192,6 +192,16 @@ main {
     grid-row: span 2;
 }
 
+.tabel_header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+    color: #109BFF;
+    padding-bottom: 3px;
+}
+
 .linetotal {
     grid-column: span 4;
 }
@@ -221,38 +231,67 @@ main {
 .tabelrec {
     padding: 10px;
     min-height: 200px;
-    background-color: #cdcdcd;
+    background-color: white;
+    overflow: auto;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+}
+
+
+
+table th {
+    position: sticky;
+    top : 0;
+    background-color:#4B93FF;
+    color: #FFE713;
+    font-size: 15px;
 }
 
 .piechart1, .piechart2 {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
 }
 
-.pieavg, .pietotal {
+.pieavg {
     padding: 10px;
-    min-width: 110px;
 }
 
-.linechartotal {
+#piechart-avg{
+    max-height: 255px;
+    max-width: 255px;
+}
+
+.pietotal {
     padding: 10px;
-    height: 100px;
+}
+
+#pie-total-property-sales{
+    max-height: 255px;
+    max-width: 255px;
+}
+
+
+.linechartotal {
+    width: 600px;
+    height: 400px;
     background-color: #cdcdcd;
 }
 
 .totalavgchart {
-    padding: 10px;
-    height: 120px;
+    width: 600px;
+    height: 400px;
     background-color: #cdcdcd;
 }
 
 .linechartprop {
-    padding: 10px;
-    height: 120px;
+    width: 600px;
+    height: 400px;
     background-color: #cdcdcd;
 }
-
 /* ----- Search Bar for TABLE ----- */
 form {
     padding-left: 10px;
@@ -270,7 +309,6 @@ form input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 20px;
 }
-
 /* -------------- Footer --------------- */
 .footertitle {
     padding-top: 27px;

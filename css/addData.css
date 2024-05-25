@@ -3,69 +3,60 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* --------- Navbar --------- */
+/* ----- Navigation Bar ----- */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0px;
+    width: 100%;
+    padding: 14px 3% 14px;
+    position: fixed;
+    background-color: #008bdc8c;
+    backdrop-filter: blur(70px);
+    font-family: "Poppins", sans-serif;
+}
+
+.logo{
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.logo span{
+    color: #FFED4F;
+}
 
 nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    padding: 48px 20px 10px ;
-    background-color: #109BFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
 }
 
-.navbar{
+.nav-button{
     display: flex;
-    flex-direction: column;
-    gap: 90px;
+    gap: 30px;
 }
 
-.acc-icon-container{
-    display: flex;
-    justify-content: center;
+.nav-button a{
+    color: #ebebeb;
+    font-weight: 400;
+    transition: 0.3 ease;
+}
+
+.nav-button a:hover,
+.nav-button a:active{
+    color: #fff;
+    font-weight:600;
+    transform: scale(1.1);
 }
 
 .account-icon{
-    width: 60px;
-}
-
-ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    list-style-type: none;
-}
-
-.dashboard-icon,
-.addData-icon,
-.feedback-icon{
-    width: 46px;
-    transition: transform 0.3s ease;
-}
-
-.dashboard-icon:hover,
-.addData-icon:hover,
-.feedback-icon:hover{
-    transform: scale(1.3);
-}
-
-.logOut-menu{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-top: 100px;
-    font-weight: 400;
-    font-size: 14px;
-    color: white;
-}
-
-.logOut-icon{
-    width: 23px;
+    width: 45px;
 }
 
 /* ----- Main Content ----- */
@@ -73,8 +64,7 @@ ul {
 
 main{
     display: block;
-    margin-left: 135px;
-    padding: 50px 210px;
+    padding: 130px 265px;
 }
 
 .card{
@@ -131,8 +121,7 @@ form input[type="text"],
 form input[type="date"] {
     margin-top: 10px;
     width: 100%;
-    padding: 11px 20px;
-    outline: none;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 20px;
     font-size: 14px;
@@ -141,10 +130,10 @@ form input[type="date"] {
 /* ----- Add Data Form Button ----- */
 
 .button{
-    padding-top: 54px;
+    padding-top: 50px;
     padding-bottom: 22px;
     display: flex;
-    gap: 152px;
+    gap: 200px;
     justify-content: center;
 }
 
@@ -152,7 +141,7 @@ form input[type="submit"],
 form input[type="reset"]{
     background-color: #008DDC;
     color: white;
-    padding: 9px 45px;
+    padding: 10px 55px;
     font-size: 18px;
     font-weight: 300;
     font-family: "Inter", sans-serif;
@@ -164,49 +153,4 @@ form input[type="reset"]{
 form input[type="reset"]:hover,
 form input[type="submit"]:hover{
     background-color: #026097;
-}
-
-
-/*-------- mobile ------*/
-@media (max-width: 767px) {
-    /* --------- Navbar --------- */
-    nav {
-        width: 100%;
-        height: auto;
-        padding: 8px 15px;
-        position: fixed;
-    }
-    
-    .navbar {
-        flex-direction: row;
-        gap: 85px;
-    }
-    
-    .account-icon{
-        width: 33px;
-    }
-
-    ul {
-        flex-direction: row;
-        gap: 28px;
-    }
-    
-    .dashboard-icon,
-    .addData-icon,
-    .feedback-icon{
-        padding-top: 5px;
-        width: 22px;
-    }
-
-    .logOut-menu{
-        padding-top: 0px;
-        padding-left: 40px;
-        font-weight: 300;
-        font-size: 9px;
-        gap: 5px;
-    }
-
-    .logOut-icon{
-        width: 15px;
-    }
 }
