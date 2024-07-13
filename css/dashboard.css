@@ -4,6 +4,8 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* --------- Navbar --------- */
@@ -12,14 +14,14 @@ nav{
     top: 0;
     left: 0;
     height: 100%;
-    padding: 48px 13px 10px ;
+    padding: 43px 11px 0px ;
     background-color: #109BFF;
 }
 
 .navbar{
     display: flex;
     flex-direction: column;
-    gap: 90px;
+    gap: 100px;
 }
 
 .acc-icon-container{
@@ -28,7 +30,7 @@ nav{
 }
 
 .account-icon{
-    width: 60px;
+    width: 55px;
 }
 
 ul {
@@ -36,45 +38,49 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     list-style-type: none;
 }
 
-.dashboard-icon,
-.addData-icon,
-.feedback-icon{
+.pie-chart-icon{
     width: 40px;
+    margin: 5px;
     transition: transform 0.3s ease;
 }
 
-.logOut-menu{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding-top: 100px;
-    font-weight: 400;
-    font-size: 13px;
-    color: white;
+
+.line-totalprop-chart-icon,
+.line-totalvsavg-chart-icon,
+.bar-yrbuild-chart-icon{
+    width: 35px;
+    margin: 5px;
+    transition: transform 0.3s ease;
 }
 
-.logOut-icon{
-    width: 20px;
+.pie-chart-icon:hover,
+.line-totalprop-chart-icon:hover,
+.line-totalvsavg-chart-icon:hover,
+.bar-yrbuild-chart-icon:hover{
+    transform: scale(1.2);
 }
 
-.dashboard-icon:hover,
-.addData-icon:hover,
-.feedback-icon:hover{
-    transform: scale(1.3);
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #333333da;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 11px;
+    z-index: 1000;
 }
 
 /* --------- Header and Filter button --------- */
 header{
-    padding: 30px 0px 38px 150px;
+    padding: 30px 0px 30px 150px;
     display:flex;
-    flex-direction: row;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    gap: 650px;
 }
 
 .logo {
@@ -85,86 +91,6 @@ header{
 
 .logo span{
     color: #FFE713;
-}
-
-.filter-button{
-    display: flex;
-    align-items: center;
-    gap: 24px ;
-}
-
-.borough-filter,
-.month-filter{
-    display: inline-block;
-}
-
-.dropbtn-borough{
-    padding: 6px 18px;
-    font-weight: 500;
-    font-size: 12px;
-    color: #6b6b6b;
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 5px;
-}
-
-.dropbtn-borough img,
-.dropbtn-month img{
-    margin-left: 5px;
-}
-
-.dropbtn-month{
-    padding: 6px 22px;
-    font-weight: 500;
-    font-size: 12px;
-    color: #6b6b6b;
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 5px;
-}
-
-.borough-dropdwn-content{
-    display: none;
-    position: absolute;
-    font-weight: 400;
-    font-size: 11px;
-    background-color: #f1f1f1;
-    width: 130px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.month-dropdwn-content{
-    display: none;
-    position: absolute;
-    font-weight: 400;
-    font-size: 11px;
-    background-color: #f1f1f1;
-    width: 60px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.borough-dropdwn-content a,
-.month-dropdwn-content a{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-.borough-dropdwn-content a:hover,
-.month-dropdwn-content a:hover {
-    background-color: #ddd;
-}
-
-.borough-filter:hover .borough-dropdwn-content,
-.month-filter:hover .month-dropdwn-content{
-    display: block;
-}
-
-.borough-filter:hover .dropbtn-borough,
-.month-filter:hover .dropbtn-month {
-    background-color: #9ac1f886;
 }
 
 /* --------------------- Main Content ------------------------ */
@@ -189,49 +115,108 @@ main {
 
 .tabel {
     grid-column: span 2;
-    grid-row: span 2;
+    grid-row: span 3;
 }
 
-.linetotal {
+.linetotal,
+.totalavg, 
+.barchart-total{
     grid-column: span 4;
-}
-
-.totalavg {
-    grid-column: span 2;
-}
-
-.totalprop {
-    grid-column: span 2;
+    padding-top: 20px;
 }
 
 /* ----------  Chart Detail ---------- */
 
-.scorecode1,
-.scorecode2 {
-    margin: auto;
+.borough-filter{
+    margin-left: 11%;
+}
+
+.dropbtn-borough{
+    padding: 6px 18px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #3f3f3f;
+    background-color: #ebebeb;
+    border: none;
+    border-radius: 5px;
+}
+
+.score-card1,
+.score-card2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
 } 
 
 .scoretotal, .scoreprop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
-    width: 200px;
-    height: 40px;
-    background-color: #cdcdcd;
+    width: 180px;
+    height: 50px;
+    background-color: #0075c956;
+    border: none;
+    border-radius: 7px;
+}
+
+#total-sale-price, #total-property{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #6b6b6b;
 }
 
 .tabelrec {
     padding: 10px;
-    min-height: 200px;
-    background-color: #cdcdcd;
+    overflow: auto;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+}
+
+#data-tabel{
+    font-size: 14px;
+}
+
+table th {
+    position: sticky;
+    top : 0;
+    background-color:#4B93FF;
+    color: #FFE713;
+    font-size: 15px;
+    overflow: hidden;
+    word-wrap:break-word;    
+}
+
+table td{
+    overflow: hidden;
+    word-wrap:break-word;
+}
+
+table.dataTable > tbody > tr.child ul.dtr-details > li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details > li.dtr-title{
+    font-weight: 300;
 }
 
 .piechart1, .piechart2 {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 15px;
+    grid-column: span 2;
 }
 
 .pieavg, .pietotal {
-    padding: 10px;
+    padding-top: 10px;
 }
 
 #piechart-avg, #pie-total-property-sales{
@@ -239,45 +224,85 @@ main {
     max-width: 255px;
 }
 
-.linechartotal {
-    padding: 10px;
-    height: 100px;
-    background-color: #cdcdcd;
+.linechartotal, .totalavgchart, .barchart-totalprop-yrbld {
+    margin: 20px 0px;
+    padding: 20px;
+    background-color: #c0bebe2c;
 }
 
-.totalavgchart {
-    padding: 10px;
-    height: 120px;
-    background-color: #cdcdcd;
+.total-prop-filter-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    font-size: 12px;
+    font-weight: 400;
+    gap:10px;
 }
 
-.linechartprop {
-    padding: 10px;
-    height: 120px;
-    background-color: #cdcdcd;
+.total-avg-filter-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    font-size: 12px;
+    font-weight: 400;   
 }
 
-/* ----- Search Bar for TABLE ----- */
-form {
-    padding-left: 10px;
-    padding-right: 10px;
+#filterForm{
+    display: flex;
+    align-items: center;
+    gap: 10px
 }
 
-.form-input {
-    width: 100%;
+.total-property-yrbuild-filter-area {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    font-size: 12px;
+    font-weight: 400;
 }
 
-form input[type="text"] {
-    width: 100%;
-    font-size: 10px;
-    padding: 7px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
+.total-property-yrbuild-filter-area form{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+#yearSelect, 
+#total-avg-sort-by, 
+#total-avg-order-by,
+#year-built-sort-by,
+#year-built-order-by {
+    padding: 6px 18px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #3f3f3f;
+    background-color: #ebebeb;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="submit"],
+button[type="submit"]{
+    padding: 2px 6px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #3f3f3f;
+    background-color: #fff;
+    border: solid 1px black;
+    border-radius: 3px;
+}
+
+input[type="number"]{
+    padding: 3px 5px;
+    font-weight: 300;
+    font-size: 13px;
 }
 
 /* -------------- Footer --------------- */
 .footertitle {
-    padding-top: 27px;
+    padding: 30px 45px 10px 150px;
     text-align: center;
     font-size: 12px;
     color: black;
@@ -290,16 +315,18 @@ form input[type="text"] {
         width: 100%;
         height: auto;
         padding: 8px 15px;
-        position: fixed;
+        position: sticky;
     }
     
     .navbar {
         flex-direction: row;
-        gap: 85px;
+        align-items: center;
+        gap: 110px;
     }
     
     .account-icon{
-        width: 33px;
+        width: 38px;
+        height: 38px;
     }
 
     ul {
@@ -307,129 +334,195 @@ form input[type="text"] {
         gap: 28px;
     }
     
-    .dashboard-icon,
-    .addData-icon,
-    .feedback-icon{
-        padding-top: 5px;
-        width: 22px;
+    .pie-chart-icon{
+        width: 25px;
+        margin: 0px;
     }
 
-    .logOut-menu{
-        padding-top: 0px;
-        padding-left: 40px;
-        font-weight: 300;
-        font-size: 9px;
-        gap: 5px;
+    .line-totalprop-chart-icon,
+    .line-totalvsavg-chart-icon,
+    .bar-yrbuild-chart-icon{
+        width: 23px;
+        margin: 0px;
     }
 
-    .logOut-icon{
-        width: 15px;
+    .table-icon{
+        width: 23px;
+        margin: 0px;
     }
 
     /* --------- Header and Filter button --------- */
     header {
-        padding: 70px 0px 35px 20px; 
-        gap: 35px; 
+        padding: 20px 0px 30px 0px; 
     }
 
     .logo {
         font-size: 14px;
     }
 
-    .filter-button {
-       gap: 10px;
-    }
-
-    .dropbtn-borough{
-        padding: 5px 10px;
-        font-size: 9px;
-    }
-
-    .dropbtn-month{
-        padding: 5px 15px;
-        font-size: 9px;
-    }
-
-    .dropbtn-borough img,
-    .dropbtn-month img{
-        width: 9px;
-    }
-
-    .borough-dropdwn-content{
-        font-size: 9px;
-        width: 109px;
-    }
-    
-    .month-dropdwn-content{
-        font-size: 9px;
-        width: 48px;
-    }
-    
-    .borough-dropdwn-content a,
-    .month-dropdwn-content a{
-        padding: 8px 16px;
-    }
 
     /* --------------------- Main Content ------------------------ */
     main {
-        padding: 0px 20px; 
+        padding: 0px 12px 0px 12px;
     }
 
     .titles {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .grid-container {
-        grid-template-columns: auto; 
-        row-gap: 30px;
-        column-gap: 20px;
-    }
-
-    .tabelrec{
-        grid-column: auto;
-    }
-
-    .linetotal {
-        grid-column: span 2;
-    }
-
-    .totalavg,
-    .totalprop {
-        grid-column: auto auto; 
+        display: grid;
+        row-gap: 60px;
+        column-gap: 0;
+        justify-content: center;
     }
 
     /* ----------  Chart Detail ---------- */
+    .borough-filter{
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+    }
+
+    .dropbtn-borough{
+        padding: 4px 11px;
+        font-size: 11px;
+    }
+    
+    .score-card1,
+    .score-card2 {
+        grid-column: span 2;
+        padding: 20px 0px 0px 0px;
+    } 
+
     .scoretotal, .scoreprop {
-        width: 150px;
-        height: 48px;
+        max-width: 150px;
+        max-height: 38px;
+        border-radius: 9px;
+    }
+
+    #total-sale-price, #total-property{
+        font-size: 12px;
+        max-width: 120px;
     }
     
+    .tabel {
+        grid-column: span 4;
+        min-width: 363px;
+        padding: 0px;
+        margin: 0;
+    }
+
+    .tabelrec {
+        padding: 5px;
+    }
+
+    table th {
+        font-size: 13px;
+    }
+
+    #data-tabel{
+        font-size: 12px;
+    }
+
+    #data-tabel_wrapper > .dt-layout-row{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        gap: 60px
+    }
+
+    .dt-search{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #data-tabel_wrapper label[for="dt-length-0"]{
+        display: none;
+    }
+
     .piechart1, .piechart2{
-        gap: 17px;
+        grid-column: span 4;
+        gap: 10px;
+    }
+
+    .linetotal, .totalavg, .barchart-total {
+        grid-column: span 4;
+        padding: 0px;
+        margin: 0px 5px;
+    }
+
+    .total-prop-filter-area{
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    #filterForm{
+        font-size: 12px;
+        gap: 15px
+    }
+
+    #filterForm div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
     }
     
-    /* .pieavg, .pietotal { // HAPUS AJA INI YES
-        width: 109px;
-        height: 109x;
-    } */
-    
-    .linechartotal {
-        padding: 10px;
-        width: 100%;
-        height: 100px;
+    .total-property-yrbuild-filter-area {
+        font-size: 12px;
+        font-weight: 400;
+        gap: 15px
+    }
+
+    .total-property-yrbuild-filter-area div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
     }
     
-    .totalavgchart {
-        padding: 10px;
-        height: 120px;
-        background-color: #cdcdcd;
+    #yearSelect, 
+    #total-avg-sort-by, 
+    #total-avg-order-by,
+    #year-built-sort-by,
+    #year-built-order-by {
+        padding: 5px 5px;
+        font-size: 10px;
     }
     
-    .linechartprop {
-        padding: 10px;
-        height: 120px;
-        background-color: #cdcdcd;
+    input[type="submit"],
+    button[type="submit"]{
+        padding: 1px 4px;
+        font-size: 10px;
     }
+    
+    input[type="number"]{
+        padding: 3px 5px;
+        font-size: 13px;
+    }   
+    
+    .linechartotal,
+    .totalavgchart,
+    .barchart-totalprop-yrbld {
+        margin: 0px 10px 0px 10px;
+        padding: 5px;
+    }
+
+    #propertySalesChart,
+    #salesVsAvgPriceChart,
+    #propertySalesByYearBuiltChart {
+        max-width: 100%;
+    }
+
+    /* Footer */
+    .footertitle {
+        padding: 60px 0 12px 0;
+        text-align: center;
+        font-size: 10px;
+    }
+    
 }
 
 /*-------- mobile tablet ------*/
@@ -438,54 +531,51 @@ form input[type="text"] {
     nav {
         width: 100%;
         height: auto;
-        padding: 8px 15px;
-        position: fixed;
+        padding: 11px 40px;
+        position: sticky;
     }
 
     .navbar {
         flex-direction: row;
-        gap: 85px;
+        align-items: center;
+        gap: 46%;
     }
 
-    .account-icon{
-        width: 40px;
+    .account-icon {
+        width: 70px;
     }
 
     ul {
         flex-direction: row;
-        gap: 28px;
+        gap: 50px;
     }
 
-    .dashboard-icon, .addData-icon, .feedback-icon{
-        padding-top: 5px;
-        justify-content: center;
-        margin-left: 40px;
-        width: 27px; 
+    .pie-chart-icon{
+        width: 40px;
+        margin: 0px;   
     }
 
-    .logOut-icon{
-        width: 20px;
+    .line-totalprop-chart-icon,
+    .line-totalvsavg-chart-icon,
+    .bar-yrbuild-chart-icon{
+        width: 35px;
+        margin: 0px;
     }
-
-    .logOut-menu{
-        padding-top: 0px;
-        padding-left: 320px;
-        font-weight: 3000;
-        font-size: 13px;
-        gap: 5px;
-    }
-
     /* --------- Header and Filter button --------- */
     header {
-        padding: 70px 0px 35px 20px; 
-        gap: 30px; 
-        margin-left: 100px;
+        padding: 70px 0 35px 0px;
+        gap: 30px;
         justify-content: center;
     }
 
     .logo {
-        font-size: 25px;
-        margin-bottom: 10px;
+        font-size: 35px;
+        padding-bottom: 30px;
+    }
+
+    /* --------------------- Main Content ------------------------ */
+    main {
+        padding: 0px 30px;
     }
 
     .filter-button {
@@ -493,65 +583,119 @@ form input[type="text"] {
         align-items: center;
     }
 
-    .dropbtn-borough{
-        padding: 5px 15px;
-        font-size: 13px;
+    .dropbtn-borough {
+        padding: 10px 20px;
+        font-size: 15px;
     }
 
-    .dropbtn-month{
+    .dropbtn-month {
         padding: 5px 10px;
         font-size: 13px;
     }
 
-    .borough-filter, .month-filter {
+    .borough-filter{
         margin-bottom: 15px;
-        
-    }
-
-    /* --------------------- Main Content ------------------------ */
-    .titles {
-        font-size: 15px;
-    }
-
-    main {
-        margin-left: 20px;
-        padding: 0 15px; 
     }
 
     .grid-container {
-        grid-template-columns: auto; 
-        row-gap: 20px;
+        row-gap: 50px;
     }
 
-    .tabel, .linetotal, .totalavg, .totalprop {
-        grid-column: auto; 
+    .borough-filter{
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
     }
 
-    /* ----------  Chart Detail ---------- */
-    .scorecode1, .scorecode2 {
-        margin-top: 20px;
-        padding: 10px 20px;
-    }
-
-    .scoreprop {
-        margin-left: 5px;
+    .dropbtn-borough{
+        padding: 8px 18px;
+        font-size: 17px;
     }
     
-    .tabelrec, .piechart1, .piechart2, .linechartotal, .totalavgchart, .linechartprop {
-        margin: 10px 5px; 
+    .score-card1,
+    .score-card2 {
+        grid-column: span 2;
+        padding-top: 20px;
+    } 
+
+    .scoretotal, .scoreprop {
+        width: 230px;
+        height: 60px;
+        border-radius: 10px;
     }
 
-    form {
-        padding: 0; 
+    #total-sale-price, #total-property{
+        font-size: 18px;
     }
 
-    .form-input {
-        width: 100%;
+    .tabel {
+        grid-column: span 4;
+        grid-row: span 2;
+        padding: 30px;
     }
 
-    form input[type="text"] {
-        font-size: 12px; 
-        padding: 10px; 
-        border-radius: 20px; 
+    .tabel_header {
+        font-size: 18px;
+    }
+
+    .tabelrec {
+        padding: 0px 25px 0px 25px;
+        min-height: 350px;
+        background-color: white;
+        overflow: auto;
+    }
+
+    table {
+        font-size: 16px;
+    }
+
+    table th {
+        font-size: 17px;
+    }
+
+    #data-tabel {
+        font-size: 15px;
+    }
+
+    /* ---------- Chart Detail ---------- */
+    .piechart-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .piechart1,
+    .piechart2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15px;
+        grid-column: span 2;
+    }
+
+    #piechart-avg,
+    #pie-total-property-sales {
+        max-height: 350px;
+        max-width: 350px;
+    }
+
+    .linechartotal,
+    .totalavgchart,
+    .barchart-totalprop-yrbld {
+        margin: 0px 20px 0px 20px;
+        padding: 15px;
+    }
+
+    #propertySalesChart,
+    #salesVsAvgPriceChart,
+    #propertySalesByYearBuiltChart {
+        max-width: 100%;
+    }
+
+    /* -------------- Footer --------------- */
+    .footertitle {
+        padding: 80px 0px 25px;
+        text-align: center;
+        font-size: 11px;
     }
 }

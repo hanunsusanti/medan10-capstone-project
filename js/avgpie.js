@@ -4,7 +4,6 @@ fetch('json/nycPropSales.json')
     })
     .then((data) => {
         window.propertyData = data;
-        console.log(data)
         createPieAvgPrice();
     });
 
@@ -24,19 +23,20 @@ fetch('json/nycPropSales.json')
             datasets: [{
                 label: 'Avg Sale Price Per Borough',
                 data: arrAvgSales,
-                borderWidth: 1,
-                hoverBorderWidth: 5
+                borderWidth: 1
             }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                     position: 'top',
                     labels: {
                         boxWidth: 12,
+                        }
                     }
-                    }
-                }
-            }
+                },
+        }
         });
     }
