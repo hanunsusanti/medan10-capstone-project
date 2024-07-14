@@ -64,17 +64,6 @@ ul {
     transform: scale(1.2);
 }
 
-.tooltip {
-    display: none;
-    position: absolute;
-    background-color: #333333da;
-    color: #fff;
-    padding: 5px;
-    border-radius: 3px;
-    font-size: 11px;
-    z-index: 1000;
-}
-
 /* --------- Header and Filter button --------- */
 header{
     padding: 30px 0px 30px 150px;
